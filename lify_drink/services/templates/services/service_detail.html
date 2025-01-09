@@ -1,0 +1,13 @@
+{% extends 'services/base.html'%}
+
+{% block content %}
+
+<h1>les détail pour {{ serv.name }} </h1>
+<ul>
+    <li>Quantité : {{ serv.quantity }}</li>
+    <li> Prix : {{ serv.price }}</li>
+    <li>Description</li>
+</ul>
+<p>{{ serv.description }}</p>
+
+{% endblock%}
