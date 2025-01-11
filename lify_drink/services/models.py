@@ -11,6 +11,7 @@ class Service(models.Model):
 
     name = models.fields.CharField(max_length=100)
     category = models.fields.CharField(choices=Category.choices, max_length=5)
+    taille = models.fields.IntegerField()
     quantity = models.fields.IntegerField(validators= [MinValueValidator(50)])
     price = models.fields.IntegerField()
     description = models.fields.CharField(max_length=10000)

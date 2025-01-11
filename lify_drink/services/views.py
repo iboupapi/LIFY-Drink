@@ -9,3 +9,6 @@ def service_list(request):
 def service_detail(request, my_id):
     serv = Service.objects.get(id=my_id)
     return render(request, 'services/service_detail.html', {'serv' : serv})
+
+def home(request):
+    return render(request, 'services/home.html')

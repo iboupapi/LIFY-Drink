@@ -2,9 +2,28 @@
 
 {% block content %}
 <h1>Nos Services</h1>
+<h3>Service Classique</h3>
 <ul>
     {% for serv in servs %}
-    <li><a href="{% url 'service-detail' serv.id%}">{{ serv.name }}</a></li>
+        {% if serv.category == 'CL'%}
+            <li><a href="{% url 'service-detail' serv.id%}">{{ serv.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<h3>Service Premium</h3>
+<ul>
+    {% for serv in servs %}
+        {% if serv.category == 'PM'%}
+            <li><a href="{% url 'service-detail' serv.id%}">{{ serv.name }}</a></li>
+        {% endif %}
+    {% endfor %}
+</ul>
+<h3>Service Gold</h3>
+<ul>
+    {% for serv in servs %}
+        {% if serv.category == 'GD'%}
+            <li><a href="{% url 'service-detail' serv.id%}">{{ serv.name }}</a></li>
+        {% endif %}
     {% endfor %}
 </ul>
 {% endblock%}
